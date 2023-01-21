@@ -96,7 +96,7 @@ ul{
     text-transform: uppercase;
     text-decoration: none;
 }
-/* End compenents */
+/* End components */
 /* Start Header */
 header {
     position: absolute;
@@ -416,6 +416,7 @@ header nav .form i{
 .portofolio .shuffle {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .portofolio .shuffle li {
     padding: 10px ;
@@ -430,23 +431,24 @@ header nav .form i{
     grid-template-rows: repeat(2, 1fr);
     margin-top: 60px ;
 }
-@media (max-width:768px) {    
-    .portofolio .image-container {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(8, 1fr);
-    }
-}
 @media (max-width:1200px) {    
     .portofolio .image-container {
         grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
         grid-template-rows: repeat(4, 1fr);
     }
 }
+@media (max-width:768px) {    
+    .portofolio .image-container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+    }
+}
 .portofolio .image-container .box {
     position: relative;
     overflow: hidden;
 }
-.portofolio .image-container .box .caption {   display: block;
+.portofolio .image-container .box .caption {
+    display: block;
     position: absolute;
     bottom: -100px;
     width: 100%;
@@ -660,7 +662,6 @@ header nav .form i{
     font-size: 14px;
     margin-bottom: 10px;
 }
-
 .our-skills .testimonials .bullets{
     display: flex;
     justify-content: center;
@@ -852,6 +853,7 @@ sup, sub {
     left: 25px;
 }
 .subscribe form input[type="email"] {
+    color: white;
     border: 1px solid white;
     border-right: none;
     background: none;
@@ -921,6 +923,14 @@ sup, sub {
 }
 .contact-us .contact-options form textarea.main-input {
     height: 200px;
+}
+.contact-us .contact-options form input[type="text"]:invalid {
+    animation: shake .3s;
+}
+@keyframes shake {
+    25% { transform: translate(4px) }
+    50% { transform: translate(-4px) }
+    75% { transform: translate(4px) }
 }
 .contact-us .contact-options form input[type="submit"] {
     background-color: var(--main-color);
